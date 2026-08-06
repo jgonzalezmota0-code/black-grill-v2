@@ -1,0 +1,42 @@
+export const complementos = [
+  {
+    id: 301,
+    categoria: "Complementos",
+    nombre: "Papas a la Francesa",
+    precio: 45,
+    descripcion: "Orden de papas a la francesa.",
+    imagen: "/images/papas-francesa.jpg",
+  },
+  {
+    id: 302,
+    categoria: "Complementos",
+    nombre: "Papas Gajo",
+    precio: 45,
+    descripcion: "Orden de papas gajo.",
+    imagen: "/images/papas-gajo.jpg",
+  },
+  {
+    id: 303,
+    categoria: "Complementos",
+    nombre: "Dedos de Queso",
+    precio: 65,
+    descripcion: "5 dedos de queso acompañados de papas.",
+    imagen: "/images/dedos-queso.jpg",
+  },
+  {
+    id: 304,
+    categoria: "Complementos",
+    nombre: "Aros de Cebolla",
+    precio: 70,
+    descripcion: "10 aros de cebolla crujientes.",
+    imagen: "/images/aros-cebolla.jpg",
+  },
+  {
+    id: 305,
+    categoria: "Complementos",
+    nombre: "Nuggets",
+    precio: 70,
+    descripcion: "7 nuggets acompañados de papas.",
+    imagen: "/images/nuggets.jpg",
+  },
+];
