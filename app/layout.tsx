@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-
+import RegisterSW from "./register-sw";
 export const metadata: Metadata = {
   title: "Black Grill",
   description: "Menú Digital Black Grill",
@@ -22,7 +22,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body>{children}</body>
+      <body>
+  <RegisterSW />
+  {children}
+</body>
     </html>
   );
 }
