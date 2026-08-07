@@ -125,7 +125,7 @@ return (
       }}
     >
       <Image
-        src={producto.imagen}
+        src="/images/boneless-7.jpg"
         alt={producto.nombre}
         width={700}
         height={450}
