@@ -335,7 +335,7 @@ function realizarPedido() {
   </div>
 
   <Image
-  src="/images/brasas/brasas-hamburguesa.webp"
+  src="/images/brasas/brasas-hamburguesas.webp"
   alt="Brasas con hamburguesa"
   width={360}
   height={360}
