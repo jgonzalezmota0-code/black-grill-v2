@@ -19,7 +19,23 @@ useEffect(() => {
   if (datos) {
     setCarrito(JSON.parse(datos));
   }
+
+  const parametros = new URLSearchParams(window.location.search);
+  const mesaQR = parametros.get("mesa");
+
+  if (mesaQR) {
+    localStorage.setItem("mesa", mesaQR);
+    setMesa(mesaQR);
+  } else {
+    const mesaGuardada = localStorage.getItem("mesa");
+
+    if (mesaGuardada) {
+      setMesa(mesaGuardada);
+    }
+  }
 }, []);
+
+  
 function enviarPedido() {
   if (!nombre.trim()) {
     alert("Escribe tu nombre");
@@ -209,13 +225,34 @@ const textoFinal =
       </select>
 {tipoPedido === "Comer aquí" && (
   <>
-    <label>🪑 Número de mesa</label>
-    <input
-      value={mesa}
-      onChange={(e) => setMesa(e.target.value)}
-      style={input}
-      placeholder="Ejemplo: Mesa 5"
-    />
+    {mesa ? (
+      <p
+        style={{
+          color: "#F59E0B",
+          fontWeight: "bold",
+          marginBottom: "20px",
+        }}
+      >
+        🪑 Mesa asignada automáticamente: {mesa}
+      </p>
+    ) : (
+      <>
+        <label>🪑 Selecciona tu mesa</label>
+        <select
+          value={mesa}
+          onChange={(e) => setMesa(e.target.value)}
+          style={input}
+        >
+          <option value="">Selecciona una mesa</option>
+          <option value="1">Mesa 1</option>
+          <option value="2">Mesa 2</option>
+          <option value="3">Mesa 3</option>
+          <option value="4">Mesa 4</option>
+          <option value="5">Mesa 5</option>
+          <option value="6">Mesa 6</option>
+        </select>
+      </>
+    )}
   </>
 )}
       {tipoPedido === "A domicilio" && (

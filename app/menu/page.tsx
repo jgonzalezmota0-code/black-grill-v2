@@ -89,6 +89,12 @@ useEffect(() => {
   if (datos) {
     setCarrito(JSON.parse(datos));
   }
+  const parametros = new URLSearchParams(window.location.search);
+const mesaQR = parametros.get("mesa");
+
+if (mesaQR) {
+  localStorage.setItem("mesa", mesaQR);
+}
 }, []);
 
 function agregarAlCarrito(producto: any) {

@@ -723,7 +723,11 @@ if (
             JSON.stringify(carrito)
           );
 
-          router.push("/menu");
+          const mesa = localStorage.getItem("mesa");
+
+router.push(
+  mesa ? "/menu?mesa=" + mesa : "/menu"
+);
         }}
         style={{
           width: "100%",
