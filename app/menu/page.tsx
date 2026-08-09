@@ -158,11 +158,15 @@ function realizarPedido() {
   localStorage.setItem("carrito", JSON.stringify(carrito));
   router.push("/pedido");
 }
-  const productosFiltrados = productos.filter(
-    (producto) =>
-      producto.categoria === categoria &&
-      producto.nombre.toLowerCase().includes(busqueda.toLowerCase())
-  );
+  const productosFiltrados = productos.filter((producto) => {
+  const texto = busqueda.trim().toLowerCase();
+
+  if (!texto) {
+    return producto.categoria === categoria;
+  }
+
+  return producto.nombre.toLowerCase().includes(texto);
+});
 
   return (
     <main

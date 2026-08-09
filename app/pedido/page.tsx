@@ -5,7 +5,6 @@ import { useRouter } from "next/navigation";
 
 export default function Pedido() {
   const [nombre, setNombre] = useState("");
-  const [telefono, setTelefono] = useState("");
   const [tipoPedido, setTipoPedido] = useState("Comer aquí");
   const [direccion, setDireccion] = useState("");
   const [referencias, setReferencias] = useState("");
@@ -104,7 +103,6 @@ const cobertura =
   const mensaje =
   "Hola Black Grill 🔥\n\n" +
   "👤 Nombre: " + nombre + "\n" +
-  "📞 Teléfono: " + telefono + "\n\n" +
   "🍽️ Tipo: " + tipoPedido + "\n";
 
 let datosExtra = "";
@@ -196,13 +194,6 @@ const textoFinal =
       <input
         value={nombre}
         onChange={(e) => setNombre(e.target.value)}
-        style={input}
-      />
-
-      <label>📞 Teléfono (opcional)</label>
-      <input
-        value={telefono}
-        onChange={(e) => setTelefono(e.target.value)}
         style={input}
       />
 

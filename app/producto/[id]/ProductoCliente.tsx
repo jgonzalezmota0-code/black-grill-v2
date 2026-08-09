@@ -125,7 +125,7 @@ return (
       }}
     >
       <Image
-        src="/images/boneless-7.jpg"
+        src={producto.imagen}
         alt={producto.nombre}
         width={700}
         height={450}
@@ -188,9 +188,11 @@ return (
     ? "🍗 ¿Qué salsa deseas?"
     : producto.categoria === "Alitas"
     ? "🍗 ¿Qué salsa deseas?"
-    : producto.categoria === "Costillas"
-    ? "🍖 Elige tus complementos"
-    : "🥤 ¿Qué refresco deseas?"}
+   : producto.categoria === "Costillas"
+? "🍖 Elige tus complementos"
+: producto.categoria === "Hamburguesas"
+? "🍔 Elige tus extras"
+: "🥤 ¿Qué refresco deseas?"}
 </h3>
           <div
             style={{
