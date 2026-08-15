@@ -11,24 +11,21 @@ export interface Producto {
   descripcion: string;
   imagen: string;
 
-  // Hamburguesas y otros extras
   extras?: Extra[];
 
-  // Alitas y Boneless
   salsas?: string[];
 
-  // Refrescos, Frappés y Malteadas
   sabores?: string[];
-  // Crepas
-rellenos?: string[];
-frutas?: string[];
-coberturas?: string[];
 
-toppings?: string[];
-maxToppings?: number;
-maxCoberturas?: number;
+  especialidades?: string[];
+  rellenos?: string[];
+  frutas?: string[];
+  coberturas?: string[];
 
-  // Cervezas
+  toppings?: string[];
+  maxToppings?: number;
+  maxCoberturas?: number;
+
   marcas?: string[];
   presentaciones?: string[];
 }
@@ -41,11 +38,16 @@ export interface ProductoCarrito extends Producto {
   salsasSeleccionadas?: string[];
 
   saborSeleccionado?: string;
-  rellenosSeleccionados?: string[];
-frutaSeleccionada?: string;
-coberturaSeleccionada?: string;
 
-toppingsSeleccionados?: string[];
+  especialidadSeleccionada?: string;
+
+  rellenosSeleccionados?: string[];
+
+  frutaSeleccionada?: string;
+
+  coberturaSeleccionada?: string;
+
+  toppingsSeleccionados?: string[];
 
   marcaSeleccionada?: string;
 

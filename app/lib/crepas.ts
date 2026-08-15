@@ -26,13 +26,13 @@ export const crepas = [
     "Cajeta",
   ],
 
-  extras: [
-    { nombre: "Oreo", precio: 15 },
-    { nombre: "Cereal", precio: 15 },
-    { nombre: "Nuez", precio: 20 },
-    { nombre: "Chispas de chocolate", precio: 10 },
-    { nombre: "Bombón", precio: 15 },
-  ],
+  especialidades: [
+  "Oreo",
+  "Cereal",
+  "Nuez",
+  "Chispas de chocolate",
+  "Bombón",
+],
 },
   {
   id: 402,
