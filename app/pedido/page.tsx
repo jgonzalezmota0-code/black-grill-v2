@@ -182,10 +182,13 @@ if (mesaQR) {
     // Número con formato para mostrar al cliente
     const numeroPedidoTexto = "BG-" + numeroPedido;
 
-    // Guardar pedido en Supabase
-    const { error } = await supabase
-      .from("pedidos")
-      .insert({
+    // Guardar pedido mediante nuestra API
+    const respuesta = await fetch("/api/pedidos", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
         numero_pedido: numeroPedido,
         cliente: nombre.trim(),
         tipo_pedido: tipoPedido,
@@ -210,20 +213,22 @@ if (mesaQR) {
         total: total,
         estado: "nuevo",
         origen: "web",
-      });
+      }),
+    });
 
-    if (error) {
-      console.error("Error Supabase:", error);
+    const resultado = await respuesta.json();
+
+    if (!respuesta.ok) {
+      console.error("Error API:", resultado);
 
       alert(
         "No se pudo guardar el pedido: " +
-          error.message
+          (resultado.error || "Error desconocido")
       );
 
       setEnviando(false);
       return;
     }
-
     // Crear mensaje para WhatsApp
     const pedido = construirPedidoWhatsApp();
 
