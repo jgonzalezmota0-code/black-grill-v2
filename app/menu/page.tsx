@@ -162,7 +162,19 @@ function vaciarCarrito() {
 }
 function realizarPedido() {
   localStorage.setItem("carrito", JSON.stringify(carrito));
-  router.push("/pedido");
+
+  const mesa = localStorage.getItem("mesa");
+
+  if (mesa) {
+    const parametros = new URLSearchParams();
+    parametros.set("mesa", mesa);
+
+    router.push(
+      "/pedido?" + parametros.toString()
+    );
+  } else {
+    router.push("/pedido");
+  }
 }
   const productosFiltrados = productos.filter((producto) => {
   const texto = busqueda.trim().toLowerCase();
