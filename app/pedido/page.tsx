@@ -274,11 +274,9 @@ if (mesaQR) {
       total;
 
     // Abrir WhatsApp
-    window.open(
-      "https://wa.me/5217291013458?text=" +
-        encodeURIComponent(textoFinal),
-      "_blank"
-    );
+   window.location.href =
+  "https://wa.me/527291013458?text=" +
+  encodeURIComponent(textoFinal);
 
     // Limpiar carrito
     localStorage.removeItem("carrito");
